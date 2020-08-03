@@ -1,0 +1,101 @@
+.AcercaDeMi {
+  width: 100%;
+  padding: 10px;
+}
+
+.AcercaDeMi-titulo {
+  font-size: calc(1em + 5vw);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.AcercaDeMi-descripcion {
+  padding: 10px 5px;
+  font-size: calc(1em + 1vw);
+  font-weight: 100;
+  font-family: var(--serifa);
+  line-height: 1.2;
+  word-wrap: normal;
+  word-break: keep-all;
+}
+
+.AcercaDeMi-datos {
+  /* background: steelblue; */
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.AcercaDeMi-datos p {
+  margin: 0;
+  line-height: 2;
+}
+
+.AcercaDeMi-datos-campo {
+  /* background: pink; */
+  width: 90%;
+  padding: 5px;
+  border-bottom: 1px solid #f3f3f3;
+}
+
+.AcercaDeMi-datos-pregunta {
+  font-weight: bold;
+  font-size: calc(1em + .4vw);
+}
+
+.AcercaDeMi-datos-respuesta {
+  font-family: var(--serifa);
+  font-size: calc(1em + .5vw);
+}
+
+.AcercaDeMi-datos-respuesta a,
+.AcercaDeMi-datos-respuesta a:hover {
+  color: rgb(12, 235, 112);
+  text-decoration: none;
+}
+
+.AcercaDeMi-buttons {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.AcercaDeMi-buttons a:hover{
+  background: rgb(240, 65, 65);
+  color: #ffffff;
+}
+
+.AcercaDeMi-buttons-contacto {
+  background: #000000;
+  color: #ffffff;
+  border: solid 1px #ffffff;
+}
+
+.AcercaDeMi-buttons-cv {
+  background: #ffffff;
+  color: #000000;
+  border: solid 1px #000000;
+  margin-left: 5px;
+}
+
+.AcercaDeMi-habilidades {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.AcercaDeMi-apariciones {
+  padding: 10px;
+}
+
+.AcercaDeMi-apariciones-imagenes{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.AcercaDeMi-apariciones-imagenes img{
+  height: 100%;
+  width: 100%;
+  margin-bottom: 20px;
+}

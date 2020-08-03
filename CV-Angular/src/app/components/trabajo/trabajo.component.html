@@ -1,0 +1,31 @@
+<div id="portafolio" class="col-12 pt-5">
+
+  <div class="card-columns">
+
+    <div class="card" *ngFor="let trabajo of trabajos">
+      <a [href]="trabajo.despliegue" target="_blank">
+        <img class="card-img-top puntero" src="{{trabajo.img}}" alt="Card image cap">
+      </a>
+      <div class="card-body">
+        <h5 class="card-title">{{ trabajo. titulo}}</h5>
+        <p class="card-text">{{ trabajo. descripcion }}</p>
+        <small>
+          <p class="card-text mb-0">
+            <strong>Realizado en: </strong>
+            {{ trabajo.fecha }}
+          </p>
+          <p class="card-text">
+
+            <strong>
+              Stack: <span class="badge badge-info">{{ trabajo.stack }}</span>
+            </strong>
+          </p>
+        </small>
+
+      </div>
+    </div>
+
+  </div>
+
+  <button class="btn btn-success btn-block"> Cargar Mas..</button>
+</div>

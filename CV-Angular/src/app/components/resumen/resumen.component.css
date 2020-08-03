@@ -1,0 +1,64 @@
+.experiencia {
+  width: 100%;
+  padding: 10px;
+}
+
+.experiencia-titulo,
+.educacion-titulo,
+.apariciones-titulo {
+  font-size: calc(1em + 5vw);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.experiencia-lista,
+.educacion-lista {
+  list-style: none;
+  padding: 0;
+}
+
+.experiencia-item,
+.educacion-item {
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #dddddd;
+  margin: 20px auto;
+}
+
+.experiencia-item:last-child,
+.educacion-item:last-child {
+  border: initial;
+}
+
+.experiencia-item-titulo,
+.educacion-item-titulo {
+  font-size: calc(1em + 2vw);
+  line-height: 1;
+  font-weight: bold;
+  word-break: keep-all;
+}
+
+.experiencia-item-fecha {
+  background: rgb(240, 39, 39);
+  display: inline-block;
+  padding: 5px;
+  margin: 5px auto;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 12px;
+}
+
+.experiencia-item-desc,
+.educacion-item-desc,
+.apariciones-desc {
+  font-size: calc(1em + 1vw);
+  font-family: var(--serifa);
+  line-height: 1.2;
+  word-break: keep-all;
+}
+
+
+.apariciones {
+  margin: 20px auto;
+}

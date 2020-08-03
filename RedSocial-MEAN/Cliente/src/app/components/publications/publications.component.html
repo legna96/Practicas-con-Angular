@@ -1,0 +1,93 @@
+<div id="publications">
+    <div *ngFor="let publication of publications" class="item-publication">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="image-user pull-left">
+            <a [routerLink]="['/perfil', publication.user._id]">
+              <img src="{{url + 'get-image-user/' + publication.user.image}}" *ngIf="publication.user.image">
+              <img src="assets/user-default.jpg" *ngIf="!publication.user.image">
+            </a>
+          </div>
+          <div>
+            <a [routerLink]="['/perfil', publication.user._id]" class="nick">
+              {{ publication.user.nick }}
+            </a>
+            &nbsp;|&nbsp;
+            <span class="date">
+              {{ (publication.created_at | amFromUnix ) | amLocale:'es' | amTimeAgo}}
+            </span>
+          </div>
+          <div class="col-lg-12" style="word-break: break-word;">
+            <h4 class="publication-text pull-left">
+              {{publication.text}}
+            </h4>
+          </div>
+          <div class="clearfix"></div>
+
+          <!-- Espacio para los botones-->
+          <div class="col-lg-12">
+
+            <!-- Button trigger modal -->
+            <a role="button" class="btn btn-danger pull-left" data-toggle="modal" href="#Modal{{ publication._id }}" *ngIf="publication.user._id == userIdentity._id">
+              <span class="glyphicon glyphicon-trash"></span>
+            </a>
+
+            &nbsp;
+
+            <!-- Modal Eliminar publicacion-->
+            <div class="modal fade" id="Modal{{publication._id}}" >
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">
+                      ¿Seguro que quieres eliminar la publicacion?
+                    </h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Si la eliminas no podrás recuperarla despues</p>
+                    <p>{{publication.text}}</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                      Cancelar
+                    </button>
+                    <button type="button" class="btn btn-primary" (click)="deletePublication(publication._id)" data-dismiss="modal">
+                      Eliminar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <!--Cuando haya imagen "publication.file != 'null'"-->
+            <button class="btn btn-warning" (click)="showThisImage(publication._id)" *ngIf="showImage != publication._id && publication.file != 'null'">
+              <span class="glyphicon glyphicon-picture"></span>
+            </button>
+
+            <button class="btn btn-danger" (click)="hideThisImage()" *ngIf="showImage == publication._id && publication.file != 'null'">
+              <span class="glyphicon glyphicon-remove"></span>
+            </button>
+
+          </div>
+
+          <!--Espacio para mostrar la imagen
+            Cuando haya imagen "publication.file != 'null' 
+            y showImage sea igual al id de la publicacion"-->
+          <div class="col-lg-12" *ngIf="publication.file != 'null' && showImage == publication._id">
+            <img src="{{ url + 'get-image-pub/' + publication.file }}" onerror="this.style.display='none'" class="img-responsive">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="col-lg-12 text-center">
+  <p>
+    <button class="btn btn-success" (click)="viewMore()" *ngIf="!noMore && total > 4">
+      Ver Más Publicaciones
+    </button>
+  </p>
+</div>

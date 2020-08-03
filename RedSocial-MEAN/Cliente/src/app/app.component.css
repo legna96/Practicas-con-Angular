@@ -1,0 +1,51 @@
+/*Cabecera*/
+.navigation{
+    margin: 0px;
+    padding: 0px !important;
+}
+
+.navbar-default .navbar-toggle{
+    background: #eee !important;
+    color: #000 !important;
+}
+
+.navigation .navbar{
+    border-radius: 0px !important;
+    background: #03aa27 !important;
+    border: none;
+}
+
+.navigation .navbar * {
+    color: #fff !important;
+}
+
+.navigation .navbar a:hover{
+    background: #2b740c !important;
+}
+
+.navigation .navbar .dropdown-menu *{
+    color: black !important;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover{
+    background: #2b740c !important;
+}
+
+.navigation .navbar .dropdown-menu a:hover{
+    background: #eee !important;
+}
+
+.navigation .avatar{
+    width: 35px;
+    height: 35px;
+    border-radius: 100px;
+    overflow: hidden;
+    margin-top: 9px;
+    margin-right: 2px;
+}
+
+.navigation .avatar img{
+    height: 35px;
+    width: 35px;
+    margin: auto;
+}

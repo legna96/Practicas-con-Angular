@@ -1,0 +1,78 @@
+<div class="col-lg-4 sidebar-32">
+    <h1 class="h1-strong">
+      Hola, {{userIdentity.name}}!!
+    </h1>
+</div>
+
+<div id="user-card" class="col-xs-12 col-lg-4 panel panel-default pull-left">
+  <div class="avatar pull-left">
+    <img src="{{ url + 'get-image-user/' + userIdentity.image }}" *ngIf="userIdentity && userIdentity.image" class="img-responsive">
+    <img src="assets/user-default.jpg" *ngIf="userIdentity && !userIdentity.image" class="img-responsive">
+  </div>
+  <div class="name-surname pull-left">
+    <a [routerLink]="['/perfil', userIdentity._id]" class="username">
+      {{userIdentity.name + ' ' + userIdentity.surname }}
+    </a>
+    <p class="nickname">{{ userIdentity.nick }}</p>
+    <div class="clearfix"></div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="stats" *ngIf="stats">
+    <div class="following-data">
+      <a [routerLink]="['/siguiendo', userIdentity._id, 1]">
+        <span class="label-stats">
+          following
+        </span>
+        <span class="number-stats">
+          {{ stats.following }}
+        </span>
+      </a>
+    </div>
+    <div class="following-data">
+      <a [routerLink]="['/seguidores', userIdentity._id, 1]">
+        <span class="label-stats">
+          followers
+        </span>
+        <span class="number-stats">
+          {{ stats.followed }}
+        </span>
+      </a>
+    </div>
+    <div class="following-data">
+      <a [routerLink]="['/perfil', userIdentity._id]">
+        <span class="label-stats">
+          Publications
+        </span>
+        <span class="number-stats">
+          {{ stats.publications }}
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+<!--FORMULARIO DE PUBLICACIONES-->
+<div id="new-publication" class="col-lg-4 pull-left panel panel-default">
+
+  <div class="alert alert-success" *ngIf="status == 'success'">
+    Se ha publicado tu contenido de manera exitosa
+  </div>
+
+  <div class="alert alert-danger" *ngIf="status == 'error'">
+    ERROR: no se ha podido publicar tu contenido
+  </div>
+
+  <form #newPubForm="ngForm" (ngSubmit)="onSubmit(newPubForm, $event)" class="col-lg-10">
+    <p>
+      <label for="text">¿Qué estas pensando hoy?</label>
+      <textarea name="text" #text="ngModel" [(ngModel)]="publication.text" class="form-control" required ></textarea>
+      <span *ngIf="!text.valid && text.touched">
+        El texto de la publicacion es obligatorio
+      </span>
+    </p>
+    <p>
+      <label for="">Sube tu foto</label>
+      <input type="file" class="form-control" placeholder="Subir imagen" (change)="fileChangeEvent($event)" />
+    </p>
+    <input type="submit" value="Publicar" class="btn btn-success" [disabled]="!newPubForm.form.valid">
+  </form>
+</div>

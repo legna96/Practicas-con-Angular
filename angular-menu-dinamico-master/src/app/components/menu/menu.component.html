@@ -1,0 +1,8 @@
+<nav class="Header">
+  <img src="/assets/img/logo.jpg" alt="GNP Logo" class="Header-Logo">
+  <ul class="Menu">
+    <li class="Menu-item" *ngFor="let navitem of navList">
+      <a routerLink="{{navitem.url}}">{{navitem.titulo}}</a>
+    </li>
+  </ul>
+</nav>

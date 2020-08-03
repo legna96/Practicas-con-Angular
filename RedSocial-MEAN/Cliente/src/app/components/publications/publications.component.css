@@ -1,0 +1,27 @@
+#publications{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.item-publication .image-user{
+    width: 45px;
+    height: 45px;
+    border-radius: 100px;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.item-publication .image-user img{
+    width: 45px;
+    height: 45px;
+}
+
+.item-publication .nick{
+    margin-top: 10px;
+    color: #077c4b;
+    font-weight: bold;
+}
+
+.publications .date{
+    color:grey;
+}

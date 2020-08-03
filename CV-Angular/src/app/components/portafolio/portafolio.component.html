@@ -1,0 +1,30 @@
+<div class="row">
+
+  <div class="seccion-imagen col-md-6 animated slideInDown">
+    <div class="cajaImagen">
+      <img src="../../../assets/img/portafolio.jpg">
+    </div>
+  </div>
+
+  <div class="seccion-cont col-md-6 animated slideInUp">
+
+    <div class="portafolio">
+
+      <h2 class="portafolio-titulo">PORTAFOLIO</h2>
+
+      <div class="portafolio-menu mt-5">
+        <button class="btn btn-outline-info" [routerLink]="['Trabajos']" routerLinkActive="active">
+          Trabajos
+        </button>
+
+        <button class="btn btn-outline-info" [routerLink]="['GitHub']" routerLinkActive="active">
+          GitHub
+        </button>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+    <app-footer></app-footer>
+
+
+  </div>
+</div>

@@ -1,0 +1,49 @@
+.h1-strong{
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.item-user .image-user{
+    width: 75px;
+    height: 75px;
+    border-radius: 100px;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.item-user .image-user img{
+    width: 80px;
+    height: 80px;
+    margin: auto;
+}
+
+.item-user .user-name{
+    margin-top: 10px;
+}
+
+.item-user .user-name .name-surname a{
+    color: #444;
+    font-weight: bold;
+}
+
+.item-user .user-name .nickname{
+    color: #969393;
+}
+
+.follow-buttons button{
+    margin-left: 2px;
+}
+
+.people{
+    min-height: 500px;
+}
+
+@media (max-width: 1199px) {
+    .people{
+        overflow: auto !important;
+        min-height: auto;
+    }
+}
